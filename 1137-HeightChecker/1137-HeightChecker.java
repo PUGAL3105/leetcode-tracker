@@ -1,0 +1,14 @@
+// Last updated: 09/07/2026, 09:47:57
+class Solution {
+    public int heightChecker(int[] heights) {
+        int[] copy = heights.clone();
+        Arrays.sort(copy);
+        int count = 0;
+        for (int i = 0; i < heights.length; i++) {
+            if (heights[i] != copy[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
