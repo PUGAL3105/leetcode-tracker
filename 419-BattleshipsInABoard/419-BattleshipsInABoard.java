@@ -1,0 +1,20 @@
+// Last updated: 09/07/2026, 09:49:26
+class Solution {
+    public int countBattleships(char[][] board) {
+        int m = board.length;
+        int n = board[0].length;
+        int count = 0;
+
+        for (int r = 0; r < m; r++) {
+            for (int c = 0; c < n; c++) {
+                if (board[r][c] == 'X') {
+                    if ((r == 0 || board[r - 1][c] != 'X') &&
+                        (c == 0 || board[r][c - 1] != 'X')) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+}
